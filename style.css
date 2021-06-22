@@ -1,11 +1,18 @@
 body {
   background-color: #000533;
   color: #dde0ff;
+  height: 100vh;
 }
 
 .indice {
   position: fixed;
   bottom: 3rem;
+  right: 3rem;
+}
+
+#coord {
+  position: fixed;
+  top: 3rem;
   right: 3rem;
 }
 
@@ -59,7 +66,7 @@ body {
   background: red;
 }
 
-#star-six {
+#star {
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
@@ -67,7 +74,7 @@ body {
   border-bottom: 100px solid red;
   position: relative;
 }
-#star-six:after {
+#star:after {
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
@@ -118,7 +125,7 @@ body {
   border-top-color: red;
 }
 
-#diamond-shield {
+#shield {
   width: 0;
   height: 0;
   border: 50px solid transparent;
@@ -126,7 +133,7 @@ body {
   position: relative;
   top: -50px;
 }
-#diamond-shield:after {
+#shield:after {
   content: "";
   position: absolute;
   left: -50px;
@@ -137,7 +144,7 @@ body {
   border-top: 70px solid red;
 }
 
-#cut-diamond {
+#cut {
   border-style: solid;
   border-color: transparent transparent red transparent;
   border-width: 0 25px 25px 25px;
@@ -147,7 +154,7 @@ body {
   position: relative;
   margin: 20px 0 50px 0;
 }
-#cut-diamond:after {
+#cut:after {
   content: "";
   position: absolute;
   top: 25px;
