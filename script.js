@@ -5,8 +5,27 @@ const shape = document.querySelector("#shape");
 const color = document.querySelector("#color");
 const bigger = document.querySelector("#bigger");
 const smaller = document.querySelector("#smaller");
-
 const coord = document.querySelector("#coord");
+
+const shapes = [
+  "square",
+  "rectangle",
+  "circle",
+  "oval",
+  "triangle",
+  "trapezoid",
+  "parallelogram",
+  "star",
+  "pentagon",
+  "diamond",
+  "shield",
+  "cut",
+  "egg",
+  "pacman",
+];
+
+let cur_color = "rgb(0, 0, 0)";
+let cur_shape = shapes[13];
 
 // Show coordinates
 document.addEventListener("mousemove", function (event) {
@@ -32,9 +51,21 @@ function random_color() {
 // Keyboard Events
 document.addEventListener("keydown", function (event) {
   if (event.code == "KeyQ") {
-    console.log("Shape");
+    // Change shape
+    let cur = shapes.indexOf(cur_shape);
+
+    if (cur < 13) {
+      cur += 1;
+    } else {
+      cur = 0;
+    }
+
+    cur_shape = shapes[cur];
+    shape.innerHTML = `Q - ${cur_shape}`;
   } else if (event.code == "KeyW") {
-    console.log("Color");
+    // Change Color
+    cur_color = random_color();
+    color.innerHTML = `W - ${cur_color}`;
   } else if (event.code == "KeyE") {
     console.log("Bigger");
   } else if (event.code == "KeyR") {
