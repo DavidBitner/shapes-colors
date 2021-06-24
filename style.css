@@ -2,12 +2,14 @@ body {
   background-color: #000533;
   color: #dde0ff;
   height: 100vh;
+  overflow: hidden;
 }
 
 .indice {
   position: fixed;
   bottom: 3rem;
   right: 3rem;
+  z-index: 1;
 }
 
 #coord {
@@ -21,12 +23,18 @@ body {
   width: 100px;
   height: 100px;
   background-color: red;
+  animation-name: my_animation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
 #rectangle {
   width: 200px;
   height: 100px;
   background: red;
+  animation-name: my_animation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
 #circle {
@@ -34,6 +42,9 @@ body {
   height: 100px;
   background: red;
   border-radius: 50%;
+  animation-name: my_animation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
 #oval {
@@ -41,22 +52,9 @@ body {
   height: 100px;
   background: red;
   border-radius: 100px / 50px;
-}
-
-#triangle {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid red;
-}
-
-#trapezoid {
-  border-bottom: 100px solid red;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  height: 0;
-  width: 100px;
+  animation-name: my_animation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
 #parallelogram {
@@ -64,106 +62,9 @@ body {
   height: 100px;
   transform: skew(20deg);
   background: red;
-}
-
-#star {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid red;
-  position: relative;
-}
-#star:after {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 100px solid red;
-  position: absolute;
-  content: "";
-  top: 30px;
-  left: -50px;
-}
-
-#pentagon {
-  position: relative;
-  width: 54px;
-  box-sizing: content-box;
-  border-width: 50px 18px 0;
-  border-style: solid;
-  border-color: red transparent;
-}
-#pentagon:before {
-  content: "";
-  position: absolute;
-  height: 0;
-  width: 0;
-  top: -85px;
-  left: -18px;
-  border-width: 0 45px 35px;
-  border-style: solid;
-  border-color: transparent transparent red;
-}
-
-#diamond {
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-bottom-color: red;
-  position: relative;
-  top: -50px;
-}
-#diamond:after {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 50px;
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-top-color: red;
-}
-
-#shield {
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-bottom: 20px solid red;
-  position: relative;
-  top: -50px;
-}
-#shield:after {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 20px;
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-top: 70px solid red;
-}
-
-#cut {
-  border-style: solid;
-  border-color: transparent transparent red transparent;
-  border-width: 0 25px 25px 25px;
-  height: 0;
-  width: 50px;
-  box-sizing: content-box;
-  position: relative;
-  margin: 20px 0 50px 0;
-}
-#cut:after {
-  content: "";
-  position: absolute;
-  top: 25px;
-  left: -25px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: red transparent transparent transparent;
-  border-width: 70px 50px 0 50px;
+  animation-name: my_animation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
 #egg {
@@ -172,17 +73,27 @@ body {
   height: 180px;
   background-color: red;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation-name: my_animation;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
 }
 
-#pacman {
-  width: 0px;
-  height: 0px;
-  border-right: 60px solid transparent;
-  border-top: 60px solid red;
-  border-left: 60px solid red;
-  border-bottom: 60px solid red;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 60px;
-  border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px;
+/* Animation to make elements disapear*/
+@keyframes my_animation {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
