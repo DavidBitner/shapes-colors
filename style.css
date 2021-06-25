@@ -3,6 +3,7 @@ body {
   color: #dde0ff;
   height: 100vh;
   overflow: hidden;
+  cursor: none;
 }
 
 .indice {
@@ -24,8 +25,9 @@ body {
   height: 100px;
   background-color: red;
   animation-name: my_animation;
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: forwards;
+  transform: translate(-50%, -50%);
 }
 
 #rectangle {
@@ -33,8 +35,9 @@ body {
   height: 100px;
   background: red;
   animation-name: my_animation;
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: forwards;
+  transform: translate(-50%, -50%);
 }
 
 #circle {
@@ -43,8 +46,9 @@ body {
   background: red;
   border-radius: 50%;
   animation-name: my_animation;
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: forwards;
+  transform: translate(-50%, -50%);
 }
 
 #oval {
@@ -53,17 +57,18 @@ body {
   background: red;
   border-radius: 100px / 50px;
   animation-name: my_animation;
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: forwards;
+  transform: translate(-50%, -50%);
 }
 
 #parallelogram {
   width: 150px;
   height: 100px;
-  transform: skew(20deg);
+  transform: skew(20deg) translate(-50%, -50%);
   background: red;
   animation-name: my_animation;
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: forwards;
 }
 
@@ -76,6 +81,7 @@ body {
   animation-name: my_animation;
   animation-duration: 5000ms;
   animation-fill-mode: forwards;
+  transform: translate(-50%, -50%);
 }
 
 /* Animation to make elements disapear*/
