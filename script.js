@@ -31,6 +31,8 @@ document.addEventListener("mousemove", function (event) {
   let x = event.clientX;
   let y = event.clientY;
 
+  coord.textContent = `${x}, ${y}`;
+
   // Create, style and position of shape on screen
   const div = document.createElement("div");
   div.setAttribute("id", `${cur_shape}`);
@@ -45,16 +47,15 @@ document.addEventListener("mousemove", function (event) {
   if (cur_shape == "oval") {
     div.style.borderRadius = `${width}px / ${height}px`;
   }
-  document.body.appendChild(div);
 
-  // Capture shape size for use in size functions
-  width = div.clientWidth;
-  height = div.clientHeight;
+  div.addEventListener("animationend", () => div.remove());
+
+  document.body.appendChild(div);
 });
 
 // Random Number
 function rand_int(min, max) {
-  return Math.floor(Math.random() * (max - min) + 1) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Random Color
@@ -86,14 +87,9 @@ document.addEventListener("keydown", function (event) {
   if (event.code == "KeyQ") {
     // Change shape
     let cur = shapes.indexOf(cur_shape);
-    cur < 5 ? (cur += 1) : (cur = 0);
+    cur < shapes.length - 1 ? (cur += 1) : (cur = 0);
     cur_shape = shapes[cur];
     shape.innerHTML = `Q - ${cur_shape}`;
-
-    // I don't know why, but this works
-    // without this next two lines of code the shape that is being shown on the screen breaks when changed
-    width = -2;
-    height = -2;
   } else if (event.code == "KeyW") {
     // Change color
     cur_color = random_color();
@@ -138,3 +134,6 @@ document.addEventListener("keydown", function (event) {
     reset_ui();
   }
 });
+
+// Set the starting shape size and UI text on page load
+reset_ui();
